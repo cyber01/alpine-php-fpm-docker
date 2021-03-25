@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.13
 LABEL maintainer="help@cyber01.ru"
 
 RUN apk --update --no-cache add \
