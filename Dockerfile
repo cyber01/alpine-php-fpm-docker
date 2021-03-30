@@ -32,6 +32,7 @@ RUN apk --update --no-cache add \
         php7-xmlreader \
         php7-xmlwriter \
         php7-pecl-amqp \
+        php7-pecl-imagick \
         php7-zip \
     && rm -rf /var/cache/apk/*
 
