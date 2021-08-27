@@ -56,6 +56,8 @@ RUN set -eux; \
 		echo 'listen.owner = www-data'; \
 		echo 'listen.group = www-data'; \
 		echo 'chdir = /var/www'; \
+		echo 'clear_env = no'; \
+		echo 'catch_workers_output = yes'; \
 	} | tee /etc/php7/php-fpm.d/zz-fpm-docker.conf; \
 	{ \
 		echo 'date.timezone = Europe/Moscow'; \
@@ -63,6 +65,7 @@ RUN set -eux; \
 		echo 'request_terminate_timeout = 600'; \
 		echo 'post_max_size = 1024M'; \
 		echo 'upload_max_filesize = 1024M'; \
+		echo 'error_log=/dev/stderr'; \
 	} | tee /etc/php7/conf.d/50-zz-ini-docker.conf
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
